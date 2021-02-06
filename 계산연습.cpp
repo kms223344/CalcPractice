@@ -73,8 +73,8 @@ int main()
     fprintf(ret, "average : %dms\n",sum/n);
     fprintf(ret, "---------------------------------------------------------------------------------\n");
     fclose(ret);
-    printf("끝났습니다! 끝내려면 두번 더 눌러주세요");
-    getch();  getch();
+    printf("끝났습니다! 끝내려면 한번 더 눌러주세요");
+    getch(); 
     /*double a, b;
 
     scanf("%lf %lf", &a, &b);

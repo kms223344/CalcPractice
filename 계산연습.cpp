@@ -22,7 +22,7 @@ int main()
     fprintf(ret, "\n\n============================================================================\n");
     fprintf(ret, "%04d.%02d.%02d -> %02d:%02d:%02d, %d time(s)\n", now.tm_year + 1900, now.tm_mon + 1, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec, Q);
     fprintf(ret, "============================================================================\n");
-    fprintf(ret, "A\t\tB\t\tAns\t\tMyAns\tR/W\t\ttime\n");
+    fprintf(ret, "A\t\tB\t\tAns\t\tMyAns\t\tR/W\ttime\n");
     printf("Start!~");
     getch();
     system("cls");

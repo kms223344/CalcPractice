@@ -77,6 +77,12 @@ public:
 		if (a == 1) printf("%lld", b);
 		else printf("%lld/%lld", b, a);
 	}
+	void fpt(FILE* p) const
+	{
+		if (sign == true) fprintf(p,"-");
+		if (a == 1) fprintf(p, "%lld", b);
+		else fprintf(p, "%lld/%lld", b, a);
+	}
 	ull geta() const { return this->a; }
 	ull getb() const { return this->b; }
 	bool getsign() const { return this->sign; }

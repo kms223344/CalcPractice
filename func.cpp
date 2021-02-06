@@ -30,6 +30,18 @@ void et()
 {
 	printf("\n");
 }
+void fsc(FILE* p)
+{
+	fprintf(p," ");
+}
+void fet(FILE* p)
+{
+	fprintf(p,"\n");
+}
+void ftp(FILE* p)
+{
+	fprintf(p, "\t");
+}
 /*unsigned int abs(int a)
 {
 	if (a < 0) return (unsigned int)(-a);

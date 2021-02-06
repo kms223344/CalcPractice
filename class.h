@@ -13,7 +13,14 @@ protected:
 	bool sign; //0 -> (+), 1 -> (-)
 public:
 	BS() : a(1), b(0), sign(0) {}
-	BS(ull a, ull b, bool sign) : a(a), b(b), sign(sign) { this->simplify(); }
+	BS(ull a, ull b, bool sign = 0) : a(a), b(b), sign(sign) { this->simplify(); }
+	BS(ll p, ll q)
+	{
+		if (p * q < 0) sign = 1;
+		else sign = 0;
+		a = abs(p);
+		b = abs(q);
+	}
 	~BS() {}
 	operator double()
 	{
@@ -54,6 +61,10 @@ public:
 	const BS operator*= (BS& tmp)
 	{
 		return *this = (*this) * (tmp);
+	}
+	bool operator== (BS& tmp)
+	{
+		return (tmp.a == a) and (tmp.b == b) and (tmp.sign == sign);
 	}
 	void Test_pt() const //print
 	{

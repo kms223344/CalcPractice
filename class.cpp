@@ -17,7 +17,7 @@ const BS BS::operator*(BS& tmp)
 {
 	return BS(this->a * tmp.a, this->b * tmp.b, this->sign ^ tmp.sign);
 }
-BS RtoBS(double R)
+BS RtoBS(double R) 
 {
 	ull t;
 	R = round(R * Limit_dicimals) / Limit_dicimals;

@@ -11,7 +11,12 @@ int main()
 {
     srand((unsigned int)time(NULL));
     int Q;
+    time_t t = time(NULL);
+    struct tm now = *localtime(&t);
+    FILE* ret = fopen("result.txt", "a");
     scanf("%d", &Q);
+    fprintf(ret, "\n------------------------------------------------------------");
+    fprintf(ret, "%d-%d-%d %d:%d:%d, %d회", now.tm_year + 1900, now.tm_mon + 1, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec, Q);
     while (Q)
     {
         Q--;
@@ -27,6 +32,8 @@ int main()
         getch();
         (x + y).pt(); et();
     }
+    printf("끝났습니다! 끝내려면 두번 더 눌러주세요");
+    getch();  getch();
     /*double a, b;
 
     scanf("%lf %lf", &a, &b);

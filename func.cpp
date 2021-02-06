@@ -22,6 +22,14 @@ ll lcm(ll a, ll b)
 		return (a * b) / gcd(a, b);
 	else return -1;
 }
+void sc()
+{
+	printf(" ");
+}
+void et()
+{
+	printf("\n");
+}
 /*unsigned int abs(int a)
 {
 	if (a < 0) return (unsigned int)(-a);

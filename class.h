@@ -55,9 +55,16 @@ public:
 	{
 		return *this = (*this) * (tmp);
 	}
-	void pt() const //print
+	void Test_pt() const //print
 	{
-		printf("%lld/%lld : %d\n", b, a, sign);
+		if (a == 1) printf("%lld : %d\n", b, sign);
+		else printf("%lld/%lld : %d\n", b, a, sign);
+	}
+	void pt() const
+	{
+		if (sign == true) printf("-");
+		if (a == 1) printf("%lld", b);
+		else printf("%lld/%lld", b, a);
 	}
 	ull geta() const { return this->a; }
 	ull getb() const { return this->b; }

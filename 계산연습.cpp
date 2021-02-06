@@ -19,9 +19,9 @@ int main()
     struct tm now = *localtime(&t);
     FILE* ret = fopen("result.txt", "a");
     scanf("%d", &Q); n = Q;
-    fprintf(ret, "\n\n============================================================================\n");
+    fprintf(ret, "\n\n=================================================================================\n");
     fprintf(ret, "%04d.%02d.%02d -> %02d:%02d:%02d, %d time(s)\n", now.tm_year + 1900, now.tm_mon + 1, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec, Q);
-    fprintf(ret, "============================================================================\n");
+    fprintf(ret, "=================================================================================\n");
     fprintf(ret, "A\t\tB\t\tAns\t\tMyAns\t\tR/W\ttime\n");
     printf("Start!~");
     getch();
@@ -71,7 +71,7 @@ int main()
         system("cls");
     }
     fprintf(ret, "average : %dms\n",sum/n);
-    fprintf(ret, "----------------------------------------------------------------------------\n");
+    fprintf(ret, "---------------------------------------------------------------------------------\n");
     fclose(ret);
     printf("끝났습니다! 끝내려면 두번 더 눌러주세요");
     getch();  getch();

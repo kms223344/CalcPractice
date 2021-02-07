@@ -22,7 +22,7 @@ public:
 		b = abs(q);
 	}
 	~BS() {}
-	operator double()
+	operator double() const
 	{
 		double k = ((double)b / a) * (sign ? (-1) : (1));
 		//k = (double)((long long)(k * (Limit_dicimals))) / Limit_dicimals;
@@ -30,7 +30,7 @@ public:
 		//printf("--%lf\n", k);
 		return k;
 	}
-	operator ll()
+	operator ll() const
 	{
 		return (b / a) * (sign ? (-1) : (1));
 	}
@@ -52,17 +52,17 @@ public:
 		this->sign = tmp.sign;
 		return *this;
 	}
-	const BS operator+ (BS& tmp);
+	const BS operator+ (BS& tmp) const;
 	const BS operator+= (BS& tmp)
 	{
 		return *this = (*this) + (tmp);
 	}
-	const BS operator* (BS& tmp);
+	const BS operator* (BS& tmp) const;
 	const BS operator*= (BS& tmp)
 	{
 		return *this = (*this) * (tmp);
 	}
-	bool operator== (BS& tmp)
+	bool operator== (BS& tmp) const
 	{
 		return (tmp.a == a) and (tmp.b == b) and (tmp.sign == sign);
 	}

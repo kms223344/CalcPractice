@@ -4,7 +4,7 @@
 #include "class.h"
 #define Epsilon 0.000001
 
-const BS BS::operator+(BS& tmp)
+const BS BS::operator+(BS& tmp) const
 {
 	BS k(*this);
 	ull g = (ull)lcm(k.a, tmp.a);
@@ -13,7 +13,7 @@ const BS BS::operator+(BS& tmp)
 	if (cmp == 0) g = 1;
 	return BS(g, (ull)abs(cmp), (cmp < 0) ? 1 : 0);
 }
-const BS BS::operator*(BS& tmp)
+const BS BS::operator*(BS& tmp) const
 {
 	return BS(this->a * tmp.a, this->b * tmp.b, this->sign ^ tmp.sign);
 }

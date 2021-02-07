@@ -18,6 +18,7 @@ int main()
     time_t t = time(NULL);
     struct tm now = *localtime(&t);
     FILE* ret = fopen("result.txt", "a");
+    printf("시작! N ?");
     scanf("%d", &Q); n = Q;
     fprintf(ret, "\n\n=================================================================================\n");
     fprintf(ret, "%04d.%02d.%02d -> %02d:%02d:%02d, %d time(s)\n", now.tm_year + 1900, now.tm_mon + 1, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec, Q);
@@ -33,13 +34,17 @@ int main()
         ll a1, a2, b1, b2, sign;
         clock_t s, e;
         a1 = a2 = b1 = b2 = 0;
-        while (!a1) a1 = rand() % li_di;
-        while (!a2) a2 = rand() % li_di;
-        while (!b1) b1 = rand() % li_di;
-        while (!b2) b2 = rand() % li_di;
-        sign = rand() % 2;
-        BS x(a1, a2, 0), y(b1, b2, sign);
+        BS x, y;
 
+        while (!(ll)(x + y))
+        {
+            while (!a1) a1 = rand() % li_di;
+            while (!a2) a2 = rand() % li_di;
+            while (!b1) b1 = rand() % li_di;
+            while (!b2) b2 = rand() % li_di;
+            sign = rand() % 2;
+            x = BS(a1, a2, 0); y = BS(b1, b2, sign);
+        }
 
         printf("문제 : "); x.pt(); sc(); y.pt(); et();
         BS ans(x + y);
@@ -48,8 +53,8 @@ int main()
 
         ll p, q;
         printf("Ans : ");
-        scanf("%lld/%lld", &p, &q);
-
+        int t = scanf("%lld/%lld", &p, &q);
+        if (t == 1) q = 1;
         e = clock();
 
         //파일 출력

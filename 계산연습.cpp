@@ -83,7 +83,7 @@ int main()
     /*double a, b;
 
     scanf("%lf %lf", &a, &b);
-    BS k(RtoBS(a)), l(RtoBS(b)); 
+    BS k(RtoBS(a)), l(RtoBS(b));
 
     k.pt(); l.pt();
 
